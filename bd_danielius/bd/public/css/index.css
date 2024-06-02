@@ -1,0 +1,514 @@
+body{
+    margin:0;
+    font-family:sans-serif;
+}
+
+.header{
+    height: 50px;
+    width:auto;
+    border-bottom: 1px solid black;
+}
+
+
+.navBar {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.navBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+}
+
+.navBar ul li {
+    margin-right: 45px;
+}
+
+.loggedInfo {
+    position: absolute; 
+    top: 0;
+    right: 0;
+    padding: 15px;
+}
+
+a{
+    color:black;
+    text-decoration: none;
+}
+
+.welcomeText{
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 25px;
+    background-color: #999;
+    font-size: large;
+    color: white;
+}
+
+.service-list {
+    margin-left: 200px;
+    margin-right: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.service-item {
+    width: calc(33.33% - 25px); 
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px; 
+    border-top-right-radius: 8px;
+}
+
+.service-item h4,
+.service-item p {
+    padding: 10px;
+    margin: 0;
+}
+
+.service-item h4 {
+    font-size: 18px;
+    color: #333;
+}
+
+.service-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+.service-item p b {
+    color: #222;
+}
+
+.service-list button{
+    width: 100%;
+    height:35px;
+    margin-bottom: 10px;
+    border:none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.modal input[type="text"],
+.modal input[type="number"],
+.modal input[type="file"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;  
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+}
+
+label{
+    margin-bottom: 20px;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+
+.delete{
+    background-color: red;
+    color:white;
+}
+
+.calendar {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.calendar button{
+    margin-top: 20px;
+}
+
+.month {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.day.reserved {
+    background-color: #ffcccc;
+}
+
+.available {
+    background-color: green;
+    color: white;
+}
+
+ul{
+    padding-inline-start: 0;
+}
+
+.taken {
+    background-color: red; 
+    color: white; 
+}
+
+.time {
+    padding: 5px; 
+    margin: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.availabilityModal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+  }
+
+  .optionsModal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    padding: 20px;
+    max-width: 90vw;
+}
+
+.optionsModal span.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.optionsModal span.close:hover {
+    color: #333;
+}
+
+.optionsModal label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.optionsModal label:last-of-type {
+    margin-bottom: 0;
+}
+
+.optionsModal select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.optionsModal button.reserve {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add button{
+    background-color:#4caf50;
+    color: #fff;
+    width:150px;
+    border-radius: 8px;
+    border:none;
+    margin-left: 200px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.optionsModal button.reserve:hover {
+    background-color: #45a049;
+}
+
+  .modal-content-availability {
+    padding: 20px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Overlay styles */
+  .overlay {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .times-section {
+    margin-bottom: 20px;
+  }
+  
+  .time-slot {
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-left: 0; 
+  }
+  
+  .timeBtn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 150px;
+    height: 30px;
+  }
+  
+  .timeBtn:hover {
+    background-color: #45a049;
+  }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  /* rezervacijai*/
+  .label-group {
+    align-items: center;
+}
+
+.label {
+    font-weight: bold;
+    color: #333;
+    margin-right: 5px;
+}
+
+.feedback-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.feedback-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-card h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.feedback-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.user {
+    display: block;
+    color: #999;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.comment {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.comment p {
+    margin: 0;
+}
+
+.comment-date {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.worker-service-list {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.worker-service-list th,
+.worker-service-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.worker-service-list th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.worker-service-item:hover {
+    background-color: #f2f2f2;
+}
+
+.service-actions button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.service-actions button i {
+    color: #666;
+}
+
+.service-actions button:hover i {
+    color: #333;
+}
+
+.scroll-container {
+    max-height: 200px; 
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+}
